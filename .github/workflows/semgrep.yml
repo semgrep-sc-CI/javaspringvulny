@@ -22,6 +22,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: semgrep ci --autofix
+      - run: semgrep ci --allow-local-builds --autofix
         env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
