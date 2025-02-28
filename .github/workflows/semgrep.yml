@@ -25,6 +25,6 @@ jobs:
       - run: |
           apk update
           apk add openjdk17
-          semgrep ci --allow-local-builds --verbose
+          semgrep ci --allow-local-builds
         env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
