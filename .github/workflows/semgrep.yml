@@ -33,6 +33,12 @@ jobs:
       - run: |
           apk update
           apk add openjdk17
-          semgrep ci --allow-local-builds --debug
+          semgrep ci --supply-chain --allow-local-builds --debug
         env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+          GRADLE_OPTS: >-
+            -Dorg.gradle.daemon=false
+            -Dorg.gradle.vfs.watch=false
+            -Dorg.gradle.vfs.watch.useNative=false
+            -Dorg.gradle.internal.launcher.watcher=false
+            -Dorg.gradle.native=false
