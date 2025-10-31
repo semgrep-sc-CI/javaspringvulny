@@ -6,6 +6,9 @@ on:
   pull_request: {}
   # Scan on-demand through GitHub Actions interface:
   workflow_dispatch: {}
+  schedule:
+  # random HH:MM to avoid a load spike on GitHub Actions at 00:00
+  - cron: 48 1 * * *
 
 permissions:
   contents: read
