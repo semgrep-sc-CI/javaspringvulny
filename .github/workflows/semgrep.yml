@@ -2,6 +2,11 @@
 name: Semgrep
 
 on:
+  # on direct commit
+  push:
+    branches:
+    - main
+    - master
   # Scan changed files in PRs (diff-aware scanning):
   pull_request: {}
   # Scan on-demand through GitHub Actions interface:
